@@ -2,25 +2,20 @@ document.addEventListener("DOMContentLoaded", function(){
     
     var showAll = document.getElementById("showall");
     
-    showAll.onclick = function showAllGames() {
+    showAll.onclick = function showAllFromDB() {
         
         $.ajax({
-            url:'connect.php',
-            type: 'GET',
-            data: {action: showAll},
-            processData: false,
-            contentType: false
-        })
-                .done(function(data){
-                
-                    alert(data);
-                
+            url:'showAllGames.php'})
+                .done(function(showAllGames){
+                    
+                    alert("AAA");
+                    
                 })
                 .fail(function(){
                 
                     alert("FAIL");
                 
-}); 
+                }); 
         
     };
     
