@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function(){
     
     var showAll = document.getElementById("showAll");
+    var addGame = document.getElementById("add");
     
     showAll.onclick = function showAllFromDB() {
         
         $.ajax({
+            
             url:'showAllGames.php',
         
         })
@@ -21,6 +23,25 @@ document.addEventListener("DOMContentLoaded", function(){
         
     };
     
+    addGame.onclick = function addGameToDB(){
+        
+        $.ajax({
+            
+            url:'addGame.php'
+            
+        })
+                .done(function(addGame){
+                    
+                    addGame;
+                    
+        })
+                .fail(function(){
+                    
+                    alert("Failed to add game.");
+                    
+        });
+        
+    }
     
     
     
