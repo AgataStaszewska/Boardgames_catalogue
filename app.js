@@ -5,10 +5,12 @@ document.addEventListener("DOMContentLoaded", function(){
     showAll.onclick = function showAllFromDB() {
         
         $.ajax({
-            url:'showAllGames.php'})
+            url:'showAllGames.php',
+        
+        })
                 .done(function(showAllGames){
                     
-                    alert("AAA");
+                    alert(showAllGames);
                     
                 })
                 .fail(function(){

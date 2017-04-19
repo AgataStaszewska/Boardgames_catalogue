@@ -1,16 +1,15 @@
 <?php
 include "connect.php";
-var_dump($connection);
+echo "BBB";
+echo '<link rel="stylesheet" href="styles.css">';
+
 function showAllGames($conn){
     
     $result = $conn->query("SELECT * FROM boardgames");   
-    echo "BBB";  
-    var_dump($result);
-
     
   //  $row = $result->fetchAll();//BAD! BAD THINGS HAPPEN!
     
-    echo "<table>";
+    echo "<table class='table'>";
             
     foreach($result->fetchAll() as $row) {
         
@@ -22,4 +21,4 @@ function showAllGames($conn){
     
 };
 
-showAllGames($connection);
+echo showAllGames($connection);
