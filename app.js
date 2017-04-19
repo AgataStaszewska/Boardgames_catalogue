@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     
-    var showAll = document.getElementById("showall");
+    var showAll = document.getElementById("showAll");
     
     showAll.onclick = function showAllFromDB() {
         
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
         })
                 .done(function(showAllGames){
                     
-                    alert(showAllGames);
+                    document.getElementById("allGames").innerHTML = showAllGames;
                     
                 })
                 .fail(function(){

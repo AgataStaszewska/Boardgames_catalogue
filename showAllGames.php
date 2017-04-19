@@ -1,7 +1,5 @@
 <?php
 include "connect.php";
-echo "BBB";
-echo '<link rel="stylesheet" href="styles.css">';
 
 function showAllGames($conn){
     
