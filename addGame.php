@@ -1,19 +1,20 @@
 <?php
 include "connect.php";
 echo "AAA";
-
-function addGame($conn){
-    echo "BBB";
     $title = $_POST['title'];
+    var_dump($title);
     $type = $_POST['type'];
-    $minPlayers = $_POST['min_players'];
-    $maxPlayers = $_POST['max_players'];
+    $minPlayers = $_POST['minPlayers'];
+    $maxPlayers = $_POST['maxPlayers'];
     $description = $_POST['description'];
+
+function addGame($title, $type, $minPlayers, $maxPlayers, $description){
+    echo "BBB";
     
     $sql = "INSERT INTO boardgames VALUES (:title, :type, :minPlayers, :maxPlayers, :description)";
     
     try {
-       $stmt = $conn->prepare($sql);
+       $stmt = $connection->prepare($sql);
        $stmt->execute([ 'title' => $title,
                         'type' => $type,
                         'minPlayers' => $minPlayers,
@@ -27,4 +28,4 @@ function addGame($conn){
        
 }
 
-echo addGame($connection);
+echo addGame($title, $type, $minPlayers, $maxPlayers, $description);
