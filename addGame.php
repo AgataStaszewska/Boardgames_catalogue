@@ -1,12 +1,11 @@
 <?php
 require "connect.php";
 
-//    $title = $_POST['title'];
-//    var_dump($title);
-//    $type = $_POST['type'];
-//    $minPlayers = $_POST['minPlayers'];
-//    $maxPlayers = $_POST['maxPlayers'];
-//    $description = $_POST['description'];
+    $name = $_POST['name'];
+    $type = $_POST['type'];
+    $minPlayers = $_POST['minPlayers'];
+    $maxPlayers = $_POST['maxPlayers'];
+    $description = $_POST['description'];
 
 function addGame($name, $type, $minPlayers, $maxPlayers, $description, $conn){
     
@@ -27,6 +26,7 @@ function addGame($name, $type, $minPlayers, $maxPlayers, $description, $conn){
        
 }
 
-//echo addGame($title, $type, $minPlayers, $maxPlayers, $description);
+$response = addGame($name, $type, $minPlayers, $maxPlayers, $description, $connection);
+echo $response;
 
-addGame("Elizjum", "karciana", 2, 4, "Karciana gra w realiach starożytnej Grecji polegająca na gromadzeniu kart z rodów poszczególnych bóstw i w ten sposób zdobywaniu punktów.", $connection);
+//addGame("Elizjum", "karciana", 2, 4, "Karciana gra w realiach starożytnej Grecji polegająca na gromadzeniu kart z rodów poszczególnych bóstw i w ten sposób zdobywaniu punktów.", $connection);

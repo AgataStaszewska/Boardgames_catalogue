@@ -2,6 +2,13 @@ document.addEventListener("DOMContentLoaded", function(){
     
     var showAll = document.getElementById("showAll");
     var addGame = document.getElementById("add");
+    
+//    var name = $("#name").val();
+//    var type = $("#type").val();
+//    var minPlayers = $("#min_players").val();
+//    var maxPlayers = $("#max_players").val();
+//    var description = $("#description").val();
+
 
     showAll.onclick = function showAllFromDB() {
 
@@ -23,43 +30,38 @@ document.addEventListener("DOMContentLoaded", function(){
         
     };
     
-    addGame.onsubmit = function addGameToDB() {
-//    var title = document.getElementById("title").text();
-    var title = $("#title").text();
-//    var type = document.getElementById("type").text();
-    var type = $("#type").text()
-//    var minPlayers = document.getElementById("minPlayers").text();
-    var minPlayers = $("#minPlayers").text();
-//    var maxPlayers = document.getElementById("maxPlayers").text();
-    var maxPlayers = $("#maxPlayers").text();
-//    var description = document.getElementById("description").text();
-    var description = $("#description").text();
-        console.log("title");
-        console.log("AAA");
+    addGame.onclick = function addGameToDB(event) {
+        
+    var name = $("#name").val();
+    var type = $("#type").val();
+    var minPlayers = $("#min_players").val();
+    var maxPlayers = $("#max_players").val();
+    var description = $("#description").val();
+    
+    console.log(name);
+        
+    //    event.stopPropagation();
+        event.preventDefault();
+        
+        
         $.ajax({
             
             url:'addGame.php',
-            type: 'POST',
-            data: {title: title, type: type, minPlayers: minPlayers, maxPlayers: maxPlayers, description: description}
-            
+            method: 'POST',
+            data: {name: name, type: type, minPlayers: minPlayers, maxPlayers: maxPlayers, description: description}     
         })
-                .done(function(addGame){
+                .done(function(data){
                     
+                    alert(data); //It works, why, though?
                     
-                    
-        })
+                })
                 .fail(function(){
                     
-                    alert("Failed to add game.");
+                    alert("FAILED TO ADD GAME");
                     
-        });
+                });
         
     };
-    
-    
-    
-    
-    
     
     
     
