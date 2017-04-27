@@ -1,21 +1,20 @@
 <?php
-include "connect.php";
-echo "AAA";
-    $title = $_POST['title'];
-    var_dump($title);
-    $type = $_POST['type'];
-    $minPlayers = $_POST['minPlayers'];
-    $maxPlayers = $_POST['maxPlayers'];
-    $description = $_POST['description'];
+require "connect.php";
 
-function addGame($title, $type, $minPlayers, $maxPlayers, $description){
-    echo "BBB";
+//    $title = $_POST['title'];
+//    var_dump($title);
+//    $type = $_POST['type'];
+//    $minPlayers = $_POST['minPlayers'];
+//    $maxPlayers = $_POST['maxPlayers'];
+//    $description = $_POST['description'];
+
+function addGame($name, $type, $minPlayers, $maxPlayers, $description, $conn){
     
-    $sql = "INSERT INTO boardgames VALUES (:title, :type, :minPlayers, :maxPlayers, :description)";
+      $sql = "INSERT INTO boardgames VALUES( NULL, :name, :type, :minPlayers, :maxPlayers, :description, NULL)";
     
     try {
-       $stmt = $connection->prepare($sql);
-       $stmt->execute([ 'title' => $title,
+       $stmt = $conn->prepare($sql);
+       $stmt->execute([ 'name' => $name,
                         'type' => $type,
                         'minPlayers' => $minPlayers,
                         'maxPlayers' => $maxPlayers,
@@ -28,4 +27,6 @@ function addGame($title, $type, $minPlayers, $maxPlayers, $description){
        
 }
 
-echo addGame($title, $type, $minPlayers, $maxPlayers, $description);
+//echo addGame($title, $type, $minPlayers, $maxPlayers, $description);
+
+addGame("Elizjum", "karciana", 2, 4, "Karciana gra w realiach starożytnej Grecji polegająca na gromadzeniu kart z rodów poszczególnych bóstw i w ten sposób zdobywaniu punktów.", $connection);
