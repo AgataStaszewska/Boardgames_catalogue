@@ -17,6 +17,6 @@ function showAllGames($conn){
     
     echo "</table>";
     
-};
+}
 
 echo showAllGames($connection);
