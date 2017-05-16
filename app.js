@@ -56,20 +56,20 @@ document.addEventListener("DOMContentLoaded", function(){
     
     findGame.onclick = function findGameFromDB() {
         
-    var name = $("#name").val();
-    var type = $("#type").val();
+    var name = $("#name2").val();
+    var type = $("#type2").val();
     var numberOfPlayers = $("#no_players").val();
-
+    console.log("AAA");
         $.ajax({
             
             url:'findGame.php',
             method: 'POST',
-            data: {name: name, type: type, numberOfPlayers: numberOfPlayers}     
+            data: {name: name, type: type, numberOfPlayers: numberOfPlayers}      
         
         })
-                .done(function(findGame){
+                .done(function(data){
                     
-                    document.getElementById("gamesFound").innerHTML = findGame;
+                    document.getElementById("gamesFound").innerHTML = data;
                     
                 })
                 .fail(function(){

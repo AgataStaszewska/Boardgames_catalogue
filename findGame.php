@@ -2,14 +2,11 @@
 
 require "connect.php";
 
-//    $name = $_POST['name'];
-//    $type = $_POST['type'];
-//    $numberOfPlayers = $_POST['numberOfplayers'];
+    $name = $_POST['name'];
+    $type = $_POST['type'];
+    $numberOfPlayers = $_POST['numberOfPlayers'];
 
 function findGame($connection, $name, $type, $numberOfPlayers){
-//    function findGame($connection){
-//
-//       $result = $conn->query("SELECT * FROM boardgames"); 
   
        $sql = "SELECT * FROM boardgames WHERE name = :name OR type = :type OR (min_nop <= :numberOfPlayers AND max_nop >= :numberOfPlayers)";
 
@@ -32,5 +29,5 @@ function findGame($connection, $name, $type, $numberOfPlayers){
        
 }
 
-echo findGame($connection, "", "", "5");
-//echo findGame($connection);
+findGame($connection, $name, $type, $numberOfPlayers);
+
