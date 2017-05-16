@@ -21,7 +21,8 @@ function findGame($connection, $name, $type, $numberOfPlayers){
             
     foreach($stmt->fetchAll() as $row) {
         
-        echo "<tr><td>" . $row['name'] . "</td><td>" . $row['type'] . "</td></tr>" . $row['description'] . "</td></tr>";
+        echo "<tr><td>" . $row['name'] . "</td><td>" . $row['type'] . "</td><td>" . $row['description'] . "</td></tr>";
+
         
     }
     
