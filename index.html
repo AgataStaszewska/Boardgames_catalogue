@@ -33,21 +33,39 @@
         <br>
         <br>
         <h3>Find game</h3>
+        <br>
+        <h2>Find by title:</h2>
         <form method="post">
             <label for="name2">Title: </label>
             <input type="text" name="name2" id="name2">
             <br>
+            <input type="button" value="Find by title" id="findGameByTitle">
+        </form>
+        
+        <div id="gameTitle" class="div"></div>
+        
+        <h2>Find by type:</h2>
+        <form method="post">
             <label for="type2">Type: </label>
             <input type="text" name="type2" id="type2">
             <br>
+            <input type="button" value="Find by type" id="findGameByType">  
+        </form>
+        
+        <div id="gameType" class="div"></div>
+        
+        <br>
+        <h2>Find by number of players:</h2>
+        <form>
             <label for="no_players">Number of players: </label>
             <input type="text" name="no_players" id="no_players">
             <br>
             <br>
-            <input type="button" value="Find game" id="findGame">           
+            <input type="button" value="Find game" id="findGameByNumber">           
         </form>
         
         <div id="gamesFound" class="div"></div>
+        
         <br>
         <br>
         <h3>Delete game</h3>
