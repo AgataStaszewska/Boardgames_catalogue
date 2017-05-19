@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function(){
     
     var showAll = document.getElementById("showAll");
     var addGame = document.getElementById("add");
-//    var findGame = document.getElementById("findGame");
     var findByTitle = document.getElementById("findGameByTitle");
     var findByType = document.getElementById("findGameByType");
     var findByNumber = document.getElementById("findGameByNumber");
+    var deleteGame = document.getElementById("deleteGame");
 
     showAll.onclick = function showAllFromDB() {
 
@@ -127,34 +127,30 @@ document.addEventListener("DOMContentLoaded", function(){
                 
                 }); 
           
-      };
-    
-//    findGame.onclick = function findGameFromDB() {
-//        
-//    var name = $("#name2").val();
-//    var type = $("#type2").val();
-//    var numberOfPlayers = $("#no_players").val();
-//    console.log("AAA");
-//        $.ajax({
-//            
-//            url:'findGame.php',
-//            method: 'POST',
-//            data: {name: name, type: type, numberOfPlayers: numberOfPlayers}      
-//        
-//        })
-//                .done(function(data){
-//                    
-//                    document.getElementById("gamesFound").innerHTML = data;
-//                    
-//                })
-//                .fail(function(){
-//                
-//                    alert("FAIL");
-//                
-//                }); 
-//        
-//    };
-    
-    
-    
+        };
+        
+        deleteGame.onclick = function deleteGameFromDB(){
+            
+            var name = $("#name3").val();
+            
+            $.ajax({
+                
+                url:'deleteGame.php',
+                method:'POST',
+                data: {name: name}
+             
+            })
+                    .done(function(data){
+                        
+                        alert("Game deleted");
+                
+                            })
+                            
+                    .fail(function(){
+                        
+                        alert("FAIL");
+                        
+                            });        
+            };
+   
 });
