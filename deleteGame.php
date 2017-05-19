@@ -15,4 +15,4 @@ function deleteGame($conn, $name){
        
 }
 
-//deleteGame($connection, "AAA");
+deleteGame($connection, $name);
