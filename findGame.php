@@ -19,6 +19,7 @@ require "connect.php";
     if(isset($_POST['numberOfPlayers'])){
         
        $numberOfPlayers = $_POST['numberOfPlayers'];
+       findGameByNumber($connection, $numberOfPlayers);
         
     }
     
@@ -86,6 +87,28 @@ function findGameByType($connection, $type){
     foreach($stmt->fetchAll() as $row) {
         
         echo "<tr><td>" . $row['name'] . "</td><td>" . $row['type'] . "</td><td>" . $row['description'] . "</td><td>" . $row['min_nop'] . "</td><td>" . $row['max_nop'] . "</td></tr>";
+
+        
+    }
+    
+    echo "</table>";
+       
+}
+
+function findGameByNumber($connection, $numberOfPlayers){
+  
+       $sql = "SELECT * FROM boardgames WHERE min_nop <= :numberOfPlayers AND max_nop >= :numberOfPlayers";
+
+       $stmt = $connection->prepare($sql);
+       $stmt->execute([ 'numberOfPlayers' => $numberOfPlayers,
+
+                      ]);
+
+    echo "<table class='table'>";
+            
+    foreach($stmt->fetchAll() as $row) {
+        
+        echo "<tr><td>" . $row['name'] . "</td><td>" . $row['type'] . "</td><td>" . $row['description'] . "</td></tr>";
 
         
     }

@@ -104,6 +104,30 @@ document.addEventListener("DOMContentLoaded", function(){
                 }); 
           
       };
+      
+        findByNumber.onclick = function findGameByType(){
+                  
+          var numberOfPlayers = $("#no_players").val();
+          
+          $.ajax({
+            
+            url:'findGame.php',
+            method: 'POST',
+            data: {numberOfPlayers: numberOfPlayers}      
+        
+        })
+                .done(function(data){
+                    
+                    document.getElementById("gameNumber").innerHTML = data;
+                    
+                })
+                .fail(function(){
+                
+                    alert("FAIL");
+                
+                }); 
+          
+      };
     
 //    findGame.onclick = function findGameFromDB() {
 //        
