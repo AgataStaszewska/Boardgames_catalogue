@@ -9,7 +9,11 @@ function showAllGames($conn){
             
     foreach($result->fetchAll() as $row) {
         
-        echo "<tr><td>" . $row['name'] . "</td><td>" . $row['description'] . "</td></tr>";
+        echo "<tr><td class='gameName'>" . $row['name'] . 
+             "</td><td class='gameDescription'>" . $row['description'] . 
+             "</td><td class='minPlayers'>" . $row['min_nop'] . 
+             "</td><td class='maxPlayers'>" . $row['max_nop'] .
+             "</td></tr>";
         
     }
     

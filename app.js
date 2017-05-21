@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function(){
     var findByType = document.getElementById("findGameByType");
     var findByNumber = document.getElementById("findGameByNumber");
     var deleteGame = document.getElementById("deleteGame");
+    var gameTitle = document.getElementsByClassName("gameName");
+    var gameDescription = document.getElementsByClassName("gameDescritpion");
+    var gameMaxNumber = document.getElementsByClassName("minPlayers");
+    var gameMinNumber = document.getElementsByClassName("maxPlayers");
 
     showAll.onclick = function showAllFromDB() {
 
@@ -152,5 +156,9 @@ document.addEventListener("DOMContentLoaded", function(){
                         
                             });        
             };
-   
+        gameTitle.onclick = function modifyGameTitle(){  //doesn't work. Whyyyy?
+            
+            console.log("AAA");
+            
+        };
 });
