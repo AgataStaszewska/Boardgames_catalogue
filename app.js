@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function(){
     var findByType = document.getElementById("findGameByType");
     var findByNumber = document.getElementById("findGameByNumber");
     var deleteGame = document.getElementById("deleteGame");
-    var gameTitle = document.getElementsByClassName("gameName");
+//    var gameTitle = document.getElementsByClassName("gameNameClass");
+    var modifyButton = document.getElementsByClassName("modifyButton");
     var gameDescription = document.getElementsByClassName("gameDescritpion");
     var gameMaxNumber = document.getElementsByClassName("minPlayers");
     var gameMinNumber = document.getElementsByClassName("maxPlayers");
@@ -156,9 +157,17 @@ document.addEventListener("DOMContentLoaded", function(){
                         
                             });        
             };
-        gameTitle.onclick = function modifyGameTitle(){  //doesn't work. Whyyyy?
+            
+        modifyButton.addEventListener('click', function(){ //won't work as well. Because class?
+            
+            
             
             console.log("AAA");
             
-        };
+        });
+//        modifyButton.onclick = function modifyGameTitle(){  //doesn't work. Whyyyy?
+//            
+//            console.log("AAAA");
+//            
+//        };
 });
