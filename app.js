@@ -164,12 +164,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
     for (var i = 0; i < modifyButtons.length; i++){
               
-        modifyButtons[i].onclick = function(){
+        modifyButtons[i].on("click", function(){ //this doesn't work. Need to figure out how to work this out with jQuery
                   
                   console.log("AAA");
                   
+        });
+                  
         };
               
-    }
-
-});
+    });
+//on("click", "p.test", function()
