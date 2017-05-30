@@ -1,18 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(){
     
-    var showAll = document.getElementById("showAll");
-    var addGame = document.getElementById("add");
-    var findByTitle = document.getElementById("findGameByTitle");
-    var findByType = document.getElementById("findGameByType");
-    var findByNumber = document.getElementById("findGameByNumber");
-    var deleteGame = document.getElementById("deleteGame");
-//    var gameTitle = document.getElementsByClassName("gameNameClass");
-    var modifyButton = document.getElementsByClassName("modifyButton");
-    var gameDescription = document.getElementsByClassName("gameDescritpion");
-    var gameMaxNumber = document.getElementsByClassName("minPlayers");
-    var gameMinNumber = document.getElementsByClassName("maxPlayers");
 
-    showAll.onclick = function showAllFromDB() {
+    var showAllButton = document.getElementById("showAll");
+
+    showAllButton.onclick = function showAllFromDB() {
 
         $.ajax({
             
@@ -32,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function(){
         
     };
     
-    addGame.onclick = function addGameToDB(event) {
+    var addGameButton = document.getElementById("add");
+    
+    addGameButton.onclick = function addGameToDB(event) {
         
     var name = $("#name").val();
     var type = $("#type").val();
@@ -40,8 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var maxPlayers = $("#max_players").val();
     var description = $("#description").val();
 
-        event.preventDefault();
-        
+        event.preventDefault();       
         
         $.ajax({
             
@@ -62,7 +54,9 @@ document.addEventListener("DOMContentLoaded", function(){
         
     };
     
-      findByTitle.onclick = function findGameByTitle(){
+    var findByTitleButton = document.getElementById("findGameByTitle");  
+    
+    findByTitleButton.onclick = function findGameByTitle(){
                   
           var name = $("#name2").val();
           
@@ -84,9 +78,11 @@ document.addEventListener("DOMContentLoaded", function(){
                 
                 }); 
           
-      };
+    };
       
-        findByType.onclick = function findGameByType(){
+    var findByTypeButton = document.getElementById("findGameByType");
+    
+    findByTypeButton.onclick = function findGameByType(){
                   
           var type = $("#type2").val();
           
@@ -108,9 +104,11 @@ document.addEventListener("DOMContentLoaded", function(){
                 
                 }); 
           
-      };
+    };
+    
+    var findByNumberButton = document.getElementById("findGameByNumber");
       
-        findByNumber.onclick = function findGameByType(){
+    findByNumberButton.onclick = function findGameByType(){
                   
           var numberOfPlayers = $("#no_players").val();
           
@@ -134,7 +132,9 @@ document.addEventListener("DOMContentLoaded", function(){
           
         };
         
-        deleteGame.onclick = function deleteGameFromDB(){
+    var deleteGameButton = document.getElementById("deleteGame");
+    
+    deleteGameButton.onclick = function deleteGameFromDB(){
             
             var name = $("#name3").val();
             
@@ -157,17 +157,19 @@ document.addEventListener("DOMContentLoaded", function(){
                         
                             });        
             };
-            
-        modifyButton.addEventListener('click', function(){ //won't work as well. Because class?
-            
-            
-            
-            console.log("AAA");
-            
-        });
-//        modifyButton.onclick = function modifyGameTitle(){  //doesn't work. Whyyyy?
-//            
-//            console.log("AAAA");
-//            
-//        };
+          
+    //here a for is needed as modifyButton is an array
+          
+    var modifyButtons = document.getElementsByClassName("modifyButton");
+
+    for (var i = 0; i < modifyButtons.length; i++){
+              
+        modifyButtons[i].onclick = function(){
+                  
+                  console.log("AAA");
+                  
+        };
+              
+    }
+
 });
