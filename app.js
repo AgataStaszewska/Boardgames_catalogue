@@ -157,20 +157,23 @@ document.addEventListener("DOMContentLoaded", function(){
                         
                             });        
             };
-          
-    //here a for is needed as modifyButton is an array
-          
-    var modifyButtons = document.getElementsByClassName("modifyButton");
-
-    for (var i = 0; i < modifyButtons.length; i++){
-              
-        modifyButtons[i].on("click", function(){ //this doesn't work. Need to figure out how to work this out with jQuery
-                  
-                  console.log("AAA");
-                  
-        });
-                  
-        };
-              
+            
+//    document.addEventListener('mouseover', function () { //this works only partially as need reference to specific game, also: inconsistent with rest of the code
+//
+//    //here a for is needed as modifyButton is an array
+//          
+//    var modifyButtons = document.getElementsByClassName("modifyButton");    
+//
+//        for (var i = 0; i < modifyButtons.length; i++){ //first click has no effect, because of event listener, changed "click" in the eventlistenet to mouseover, now works CHEATER
+//              
+//            modifyButtons[i].onclick = function(){ 
+//                  
+//                  console.log("Clicked button " + i);
+//                  
+//            };
+//                  
+//        };
+//        
+//    });
+            
     });
-//on("click", "p.test", function()
