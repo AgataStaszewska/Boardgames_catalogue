@@ -1,3 +1,8 @@
+<?php
+
+//THIS DOESNT WORK
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,17 +30,12 @@
             <label for="description">Description: </label>
             <input type="text" name="description" id="descriptionModify">
             <br>
-            <input type="submit" value="Apply changes" id="modify">           
+            <input type="submit" value="Apply changes" id="modify" action="">           
         </form> 
         
     </body>
     
-<?php
 
-//
-//$gameTitle = $_POST['name'];
-//
-//echo $gameTitle;
 
 
 
