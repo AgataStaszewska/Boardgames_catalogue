@@ -11,32 +11,32 @@
         <h1>Agata's boardgame catalogue</h1>
         <button type="button" id="showAll">Show all board games</button>
         <div id="allGames" class="div"></div>
-        <h3>Add game</h3>
+        <h2>Add game</h2>
         <form method="post">
-            <label for="name">Title: </label>
-            <input type="text" name="name" id="name">
+            <!--<label for="name">Title: </label>-->
+            <input type="text" name="name" id="name" placeholder="Enter title">
             <br>
-            <label for="type">Type: </label>
-            <input type="text" name="type" id="type">
+            <!--<label for="type">Type: </label>-->
+            <input type="text" name="type" id="type" placeholder="Enter type">
             <br>
-            <label for="min_players">Min. players: </label>
-            <input type="text" name="min_players" id="min_players">
+            <!--<label for="min_players">Min. players: </label>-->
+            <input type="text" name="min_players" id="min_players" placeholder="Enter min. players">
             <br>
-            <label for="max_players">Max. players: </label>
-            <input type="text" name="max_players" id="max_players">
+            <!--<label for="max_players">Max. players: </label>-->
+            <input type="text" name="max_players" id="max_players" placeholder="Enter max. players">
             <br>
-            <label for="description">Description: </label>
-            <input type="text" name="description" id="description">
+            <!--<label for="description">Description: </label>-->
+            <input type="text" name="description" id="description" placeholder="Enter description">
             <br>
             <input type="submit" value="Add game" id="add">           
         </form>
         <br>
         <br>
-        <h3>Find game</h3>
+        <h2>Find game</h2>
         <br>
-        <h2>Find by title:</h2>
+        <h3>Find by title:</h3>
         <form method="post">
-            <label for="name2">Title: </label>
+            <!--<label for="name2">Title: </label>-->
             <input type="text" name="name2" id="name2">
             <br>
             <input type="button" value="Find by title" id="findGameByTitle">
@@ -44,9 +44,9 @@
         
         <div id="gameTitle" class="div"></div>
         
-        <h2>Find by type:</h2>
+        <h3>Find by type:</h3>
         <form method="post">
-            <label for="type2">Type: </label>
+            <!--<label for="type2">Type: </label>-->
             <input type="text" name="type2" id="type2">
             <br>
             <input type="button" value="Find by type" id="findGameByType">  
@@ -55,9 +55,9 @@
         <div id="gameType" class="div"></div>
         
         <br>
-        <h2>Find by number of players:</h2>
+        <h3>Find by number of players:</h3>
         <form>
-            <label for="no_players">Number of players: </label>
+            <!--<label for="no_players">Number of players: </label>-->
             <input type="text" name="no_players" id="no_players">
             <br>
             <br>
@@ -68,10 +68,10 @@
         
         <br>
         <br>
-        <h3>Delete game</h3>
+        <h2>Delete game</h2>
         <form method="post">
-            <label for="name3">Title: </label>
-            <input type="text" name="name3" id="name3">
+            <!--<label for="name3">Title: </label>-->
+            <input type="text" name="name3" id="name3" placeholder="Enter title">
             <br>
             <br>
             <input type="button" value="Delete game" id="deleteGame">    

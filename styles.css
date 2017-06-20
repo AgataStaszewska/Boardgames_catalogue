@@ -1,4 +1,54 @@
+body {
+    background-color: lightgray;   
+    font-family: Arial;
+ 
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: black;
+    font-family: Arial;
+    
+}
+
+form {
+    text-align: center;
+    color: black;
+    font-family: Arial;
+    border: black;
+
+}
+
+input {
+
+    width: 200px;   
+}
+
+
+
 .table, tr, td {
    background-color: pink;
    border: 2px solid black;
+}
+
+input[type=button], [type=submit]{
+    
+    width: 120px;
+    background-color: white;
+    border: 2px solid green;
+}
+
+#showAll {
+    
+    margin: auto;
+    display: block;
+    
+}
+
+#deleteGame {
+    
+    background-color: red;
+    border: 2px solid red;
+    color: white;
+    
 }
