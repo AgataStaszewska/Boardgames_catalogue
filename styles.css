@@ -1,5 +1,8 @@
 body {
-    background-color: lightgray;   
+    
+    background: url("images/boardgames.png");
+    background-repeat: no-repeat;
+    background-color: white;   
     font-family: Arial;
  
 }
@@ -21,34 +24,72 @@ form {
 
 input {
 
-    width: 200px;   
+    width: 200px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    margin: 2px;
 }
 
-
-
-.table, tr, td {
-   background-color: pink;
+td {
+   background-color: white;
    border: 2px solid black;
 }
 
 input[type=button], [type=submit]{
     
+    padding: 10px;
     width: 120px;
     background-color: white;
-    border: 2px solid green;
+    color: black;
+    border: 2px solid black;
+}
+
+input[type=button]:hover {
+    
+    cursor: pointer;
+    background-color: lightgray;
+    
+}
+
+input[type=submit]:hover {
+    
+    cursor: pointer;
+    background-color: lightgrey;
+    
 }
 
 #showAll {
     
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
     margin: auto;
     display: block;
     
 }
 
+#showAll:hover {
+    
+    cursor: pointer;
+    background-color: lightgray;
+    
+}
+
 #deleteGame {
     
+    padding: 10px;
     background-color: red;
     border: 2px solid red;
     color: white;
+    
+}
+
+#deleteGame:hover {
+    
+    cursor: not-allowed; 
+    background-color: white;
+    color: red;
     
 }

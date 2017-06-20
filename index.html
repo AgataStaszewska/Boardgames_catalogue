@@ -5,10 +5,10 @@
         <link rel="stylesheet" href="styles.css">
         <script src="jquery.js"></script>
         <script src="app.js"></script>  
-        <title>Agata's boardgame catalogue</title>
+        <title>Agata's boardgames catalogue</title>
     </head>   
     <body>
-        <h1>Agata's boardgame catalogue</h1>
+        <h1>Agata's boardgames catalogue</h1>
         <button type="button" id="showAll">Show all board games</button>
         <div id="allGames" class="div"></div>
         <h2>Add game</h2>
@@ -28,6 +28,7 @@
             <!--<label for="description">Description: </label>-->
             <input type="text" name="description" id="description" placeholder="Enter description">
             <br>
+            <br>
             <input type="submit" value="Add game" id="add">           
         </form>
         <br>
@@ -39,6 +40,7 @@
             <!--<label for="name2">Title: </label>-->
             <input type="text" name="name2" id="name2">
             <br>
+            <br>
             <input type="button" value="Find by title" id="findGameByTitle">
         </form>
         
@@ -48,6 +50,7 @@
         <form method="post">
             <!--<label for="type2">Type: </label>-->
             <input type="text" name="type2" id="type2">
+            <br>
             <br>
             <input type="button" value="Find by type" id="findGameByType">  
         </form>
@@ -69,7 +72,7 @@
         <br>
         <br>
         <h2>Delete game</h2>
-        <form method="post">
+        <form method="post" autocomplete="off">
             <!--<label for="name3">Title: </label>-->
             <input type="text" name="name3" id="name3" placeholder="Enter title">
             <br>
