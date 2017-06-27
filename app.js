@@ -2,8 +2,14 @@ document.addEventListener("DOMContentLoaded", function(){
     
 
     var showAllButton = document.getElementById("showAll");
+    var clickCounter = 0;
+   
 
     showAllButton.onclick = function showAllFromDB() {
+        
+        if (clickCounter !== 1){
+        
+        clickCounter = 1;
 
         $.ajax({
             
@@ -21,7 +27,18 @@ document.addEventListener("DOMContentLoaded", function(){
                 
                 }); 
         
+        showAllButton.innerText = "Hide";
+                
+        }else{
+
+            document.getElementById("allGames").innerHTML = "";
+            clickCounter = 0;
+            showAllButton.innerText = "Show all board games";
+            
+        }        
+        
     };
+
     
     var addGameButton = document.getElementById("add");
     
